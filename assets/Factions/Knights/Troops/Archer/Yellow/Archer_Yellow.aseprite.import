@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://1rx3lp1xim0o"
+path="res://.godot/imported/Archer_Yellow.aseprite-ac287ebd12bf1ef084ff355e111455ca.res"
+
+[deps]
+
+source_file="res://assets/Factions/Knights/Troops/Archer/Yellow/Archer_Yellow.aseprite"
+dest_files=["res://.godot/imported/Archer_Yellow.aseprite-ac287ebd12bf1ef084ff355e111455ca.res"]
+
+[params]
+

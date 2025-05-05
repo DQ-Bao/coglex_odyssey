@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://ceacbbrroobjx"
+path="res://.godot/imported/Barrel_Purple.aseprite-2cc675f8dffb79dbfb83ca27e9c59448.res"
+
+[deps]
+
+source_file="res://assets/Factions/Goblins/Troops/Barrel/Purple/Barrel_Purple.aseprite"
+dest_files=["res://.godot/imported/Barrel_Purple.aseprite-2cc675f8dffb79dbfb83ca27e9c59448.res"]
+
+[params]
+

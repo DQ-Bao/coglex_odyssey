@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b4nkticr87bjs"
+path="res://.godot/imported/Rocks.aseprite-6f6110b72ce42e5ddf87f32abb820ecb.res"
+
+[deps]
+
+source_file="res://assets/Terrain/Water/Rocks/Rocks.aseprite"
+dest_files=["res://.godot/imported/Rocks.aseprite-6f6110b72ce42e5ddf87f32abb820ecb.res"]
+
+[params]
+

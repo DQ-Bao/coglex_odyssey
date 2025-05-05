@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cfd13a1arrax3"
+path="res://.godot/imported/Warrior_Purple.aseprite-90a82923e13a180a1a2a1c62ada431eb.res"
+
+[deps]
+
+source_file="res://assets/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.aseprite"
+dest_files=["res://.godot/imported/Warrior_Purple.aseprite-90a82923e13a180a1a2a1c62ada431eb.res"]
+
+[params]
+

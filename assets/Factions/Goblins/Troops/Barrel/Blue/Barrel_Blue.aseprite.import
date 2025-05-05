@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://k5uauop25v2a"
+path="res://.godot/imported/Barrel_Blue.aseprite-4ee14b595a7c493551207587ae03913b.res"
+
+[deps]
+
+source_file="res://assets/Factions/Goblins/Troops/Barrel/Blue/Barrel_Blue.aseprite"
+dest_files=["res://.godot/imported/Barrel_Blue.aseprite-4ee14b595a7c493551207587ae03913b.res"]
+
+[params]
+

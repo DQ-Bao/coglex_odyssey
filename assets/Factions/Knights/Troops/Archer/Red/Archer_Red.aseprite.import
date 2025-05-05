@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bq0quxytbb1"
+path="res://.godot/imported/Archer_Red.aseprite-149701c6bc4ab4fe52c78cc0a188390f.res"
+
+[deps]
+
+source_file="res://assets/Factions/Knights/Troops/Archer/Red/Archer_Red.aseprite"
+dest_files=["res://.godot/imported/Archer_Red.aseprite-149701c6bc4ab4fe52c78cc0a188390f.res"]
+
+[params]
+

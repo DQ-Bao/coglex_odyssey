@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bh340tdca645c"
+path="res://.godot/imported/Torch_Red.aseprite-bc06085105d70a8db389039915b702d6.res"
+
+[deps]
+
+source_file="res://assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.aseprite"
+dest_files=["res://.godot/imported/Torch_Red.aseprite-bc06085105d70a8db389039915b702d6.res"]
+
+[params]
+

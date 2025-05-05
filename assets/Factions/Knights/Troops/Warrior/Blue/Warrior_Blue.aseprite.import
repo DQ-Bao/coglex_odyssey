@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://byqx2l630l1ix"
+path="res://.godot/imported/Warrior_Blue.aseprite-5ada03f085726acfd1fbbe6a94151866.res"
+
+[deps]
+
+source_file="res://assets/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.aseprite"
+dest_files=["res://.godot/imported/Warrior_Blue.aseprite-5ada03f085726acfd1fbbe6a94151866.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://daprhwsn1ldqn"
+path="res://.godot/imported/Warrior_Yellow.aseprite-5bc169bd368e7e38515f0a5edd037602.res"
+
+[deps]
+
+source_file="res://assets/Factions/Knights/Troops/Warrior/Yellow/Warrior_Yellow.aseprite"
+dest_files=["res://.godot/imported/Warrior_Yellow.aseprite-5bc169bd368e7e38515f0a5edd037602.res"]
+
+[params]
+

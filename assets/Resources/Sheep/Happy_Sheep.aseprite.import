@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://daejdu102jo42"
+path="res://.godot/imported/Happy_Sheep.aseprite-333249d009dcdabb5bbbfb6f4bfafc19.res"
+
+[deps]
+
+source_file="res://assets/Resources/Sheep/Happy_Sheep.aseprite"
+dest_files=["res://.godot/imported/Happy_Sheep.aseprite-333249d009dcdabb5bbbfb6f4bfafc19.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://8v317jxso7i6"
+path="res://.godot/imported/Tree.aseprite-31e0bf9d7e84e5f9d253d6613d470ad9.res"
+
+[deps]
+
+source_file="res://assets/Resources/Trees/Tree.aseprite"
+dest_files=["res://.godot/imported/Tree.aseprite-31e0bf9d7e84e5f9d253d6613d470ad9.res"]
+
+[params]
+
