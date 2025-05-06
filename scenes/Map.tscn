@@ -1,0 +1,50 @@
+[gd_scene load_steps=16 format=3 uid="uid://mqr00tbuj0u7"]
+
+[ext_resource type="PackedScene" path="res://scenes/Miscs_0.tscn" id="0_id"]
+[ext_resource type="PackedScene" path="res://scenes/Trees_front_1.tscn" id="1_id"]
+[ext_resource type="PackedScene" path="res://scenes/Buildings_2.tscn" id="2_id"]
+[ext_resource type="PackedScene" path="res://scenes/Trees_back_3.tscn" id="3_id"]
+[ext_resource type="PackedScene" path="res://scenes/Small_rocks_4.tscn" id="4_id"]
+[ext_resource type="PackedScene" path="res://scenes/Shadows_5.tscn" id="5_id"]
+[ext_resource type="PackedScene" path="res://scenes/Stairs_6.tscn" id="6_id"]
+[ext_resource type="PackedScene" path="res://scenes/Bridge_-_horizontal_7.tscn" id="7_id"]
+[ext_resource type="PackedScene" path="res://scenes/Bridge_-_vertical_8.tscn" id="8_id"]
+[ext_resource type="PackedScene" path="res://scenes/Grass_9.tscn" id="9_id"]
+[ext_resource type="PackedScene" path="res://scenes/Rocks_10.tscn" id="10_id"]
+[ext_resource type="PackedScene" path="res://scenes/Cliff_11.tscn" id="11_id"]
+[ext_resource type="PackedScene" path="res://scenes/Sand_12.tscn" id="12_id"]
+[ext_resource type="PackedScene" path="res://scenes/Background_13.tscn" id="13_id"]
+[ext_resource type="PackedScene" uid="uid://cwkkwvjtk8p34" path="res://scenes/player.tscn" id="15_djx7b"]
+
+[node name="map" type="Node2D"]
+
+[node name="Background_13" parent="." instance=ExtResource("13_id")]
+
+[node name="Sand_12" parent="." instance=ExtResource("12_id")]
+
+[node name="Cliff_11" parent="." instance=ExtResource("11_id")]
+
+[node name="Rocks_10" parent="." instance=ExtResource("10_id")]
+
+[node name="Grass_9" parent="." instance=ExtResource("9_id")]
+
+[node name="Bridge_-_vertical_8" parent="." instance=ExtResource("8_id")]
+
+[node name="Bridge_-_horizontal_7" parent="." instance=ExtResource("7_id")]
+
+[node name="Stairs_6" parent="." instance=ExtResource("6_id")]
+
+[node name="Shadows_5" parent="." instance=ExtResource("5_id")]
+
+[node name="Small_rocks_4" parent="." instance=ExtResource("4_id")]
+
+[node name="Trees_back_3" parent="." instance=ExtResource("3_id")]
+
+[node name="Buildings_2" parent="." instance=ExtResource("2_id")]
+
+[node name="Trees_front_1" parent="." instance=ExtResource("1_id")]
+
+[node name="Miscs_0" parent="." instance=ExtResource("0_id")]
+
+[node name="player" parent="." instance=ExtResource("15_djx7b")]
+position = Vector2(848, 448)

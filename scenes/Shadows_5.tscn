@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6BiQhM31RR"]
+
+[ext_resource type="TileSet" id="tileset_id" path="tileset.tres"]
+
+[node name="Shadows_5" type="TileMapLayer"]
+collision_enabled = false
+tile_set = ExtResource("tileset_id")
+tile_map_data = PackedByteArray(0, 0, 6, 0, 9, 0, 0, 0, 2, 0, 18, 0, 0, 0)

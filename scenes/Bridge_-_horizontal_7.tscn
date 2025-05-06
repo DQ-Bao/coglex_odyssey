@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cR6csoWMQQs"]
+
+[ext_resource type="TileSet" id="tileset_id" path="tileset.tres"]
+
+[node name="Bridge_-_horizontal_7" type="TileMapLayer"]
+collision_enabled = true
+tile_set = ExtResource("tileset_id")
+tile_map_data = PackedByteArray(0, 0, 5, 0, 8, 0, 0, 0, 6, 0, 18, 0, 0, 0, 6, 0, 8, 0, 0, 0, 7, 0, 18, 0, 0, 0, 7, 0, 8, 0, 0, 0, 0, 0, 19, 0, 0, 0)
