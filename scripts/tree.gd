@@ -1,4 +1,4 @@
 extends Node2D
 
 func _ready() -> void:
-	$AnimatedSprite2D.play("Idle")
+	$AnimatedSprite2D.play("Idle",0.2)
