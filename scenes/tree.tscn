@@ -93,7 +93,6 @@ texture_filter = 1
 position = Vector2(0, -72)
 sprite_frames = SubResource("SpriteFrames_5yujg")
 animation = &"Idle"
-frame_progress = 0.809272
 metadata/_aseprite_wizard_interface_config_ = {
 "animation_section": false,
 "layer_section": false,
