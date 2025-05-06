@@ -404,6 +404,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
 offset_left = -64.0
 offset_top = -104.0
 offset_right = 64.0
