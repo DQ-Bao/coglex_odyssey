@@ -1,11 +1,8 @@
-[gd_scene load_steps=47 format=4 uid="uid://p7h38ieyf546"]
+[gd_scene load_steps=44 format=4 uid="uid://p7h38ieyf546"]
 
 [ext_resource type="Script" uid="uid://lc5kp0cw2nuc" path="res://scripts/npc.gd" id="1_nh2m4"]
-[ext_resource type="Texture2D" uid="uid://0a5dwp6ys0qa" path="res://assets/UI/Banners/Carved_3Slides.png" id="2_hwkja"]
-[ext_resource type="FontFile" uid="uid://cyp0vwcv4ojo" path="res://assets/Fonts/OpenDyslexic-Regular.woff" id="3_0tygy"]
-[ext_resource type="FontFile" uid="uid://dd8l536k1t02x" path="res://assets/Fonts/OpenDyslexic-Italic.woff" id="4_sptji"]
-[ext_resource type="FontFile" uid="uid://befte4t1le3r4" path="res://assets/Fonts/OpenDyslexic-Bold-Italic.woff" id="5_v4e37"]
-[ext_resource type="FontFile" uid="uid://c157kmylnaked" path="res://assets/Fonts/OpenDyslexic-Bold.woff" id="6_1h837"]
+[ext_resource type="PackedScene" uid="uid://bemyq51p6sbk1" path="res://scenes/dialogue_trigger.tscn" id="3_rv78h"]
+[ext_resource type="Resource" uid="uid://6teqbjrolto5" path="res://dialogues/example.dialogue" id="4_7n8xq"]
 [ext_resource type="Texture2D" uid="uid://bt1spc6pyl8vx" path="res://assets/UI/Buttons/Button_Blue.png" id="7_gl1un"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_tcuxl"]
@@ -336,9 +333,8 @@ animations = [{
 radius = 16.0
 height = 32.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nh2m4"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7n8xq"]
 radius = 48.0
-height = 96.0
 
 [node name="Npc" type="StaticBody2D"]
 script = ExtResource("1_nh2m4")
@@ -369,12 +365,6 @@ metadata/_aseprite_wizard_source_file_hash_ = "0febdd94e9b7064573323d12dca9ddf9"
 position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_tcuxl")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -24)
-shape = SubResource("CapsuleShape2D_nh2m4")
-
 [node name="Prompt" type="NinePatchRect" parent="."]
 offset_left = -48.0
 offset_top = -88.0
@@ -399,29 +389,9 @@ grow_vertical = 2
 text = "F"
 horizontal_alignment = 1
 
-[node name="DialogTimer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
+[node name="DialogueTrigger" parent="." instance=ExtResource("3_rv78h")]
+dialogue_resource = ExtResource("4_7n8xq")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
-offset_left = -64.0
-offset_top = -104.0
-offset_right = 64.0
-offset_bottom = -64.0
-
-[node name="DialogBox" type="NinePatchRect" parent="PanelContainer"]
-layout_mode = 2
-texture = ExtResource("2_hwkja")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/DialogBox"]
-layout_mode = 2
-offset_left = 8.0
-offset_right = 352.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("3_0tygy")
-theme_override_fonts/italics_font = ExtResource("4_sptji")
-theme_override_fonts/bold_italics_font = ExtResource("5_v4e37")
-theme_override_fonts/bold_font = ExtResource("6_1h837")
-fit_content = true
-vertical_alignment = 1
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueTrigger"]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_7n8xq")

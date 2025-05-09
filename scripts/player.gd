@@ -6,9 +6,17 @@ var face_left = false
 
 @onready var sprite := $AnimatedSprite2D
 @onready var attack_area := $AttackArea
+@onready var dialogue_finder = $Direction/DialogueFinder
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		var dialogues = dialogue_finder.get_overlapping_areas()
+		if dialogues.size() > 0:
+			dialogues[0].start()
+			return
 		
 	
 func player_movement(_delta):
