@@ -16,9 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://cwkkwvjtk8p34" path="res://scenes/player.tscn" id="15_djx7b"]
 [ext_resource type="PackedScene" uid="uid://p7h38ieyf546" path="res://scenes/npc.tscn" id="15_sxh8t"]
 [ext_resource type="PackedScene" uid="uid://cbb7hnej2yqx2" path="res://scenes/tree.tscn" id="16_sxh8t"]
-[ext_resource type="PackedScene" uid="uid://ds0uspl4coqt5" path="res://scenes/goblin.tscn" id="17_u4fdk"]
+[ext_resource type="PackedScene" path="res://scenes/goblin.tscn" id="17_u4fdk"]
 [ext_resource type="PackedScene" uid="uid://br4ketgbd8uej" path="res://sheep.tscn" id="18_08blb"]
-[ext_resource type="PackedScene" uid="uid://cijhlb8wroxu6" path="res://scenes/dead.tscn" id="19_r402g"]
+[ext_resource type="PackedScene" path="res://scenes/dead.tscn" id="19_r402g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4fdk"]
 texture = ExtResource("9_sxh8t")

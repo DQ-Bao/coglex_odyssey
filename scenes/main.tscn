@@ -88,6 +88,7 @@ texture = ExtResource("5_85g3d")
 region_rect = Rect2(30, 0, 129, 192)
 
 [node name="Label" type="Label" parent="player/NinePatchRect"]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 8.0
 offset_right = 800.0
