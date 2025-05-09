@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dt6gta8jx2eqv"]
+[gd_scene load_steps=20 format=3 uid="uid://dt6gta8jx2eqv"]
 
 [ext_resource type="PackedScene" uid="uid://dadwop41cfvaq" path="res://scenes/Arena/PlayerArena.tscn" id="1_qvfjg"]
 [ext_resource type="Script" uid="uid://cj2qlaendb310" path="res://scripts/Arena/arena.gd" id="1_yrroq"]
@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cbb7hnej2yqx2" path="res://scenes/tree.tscn" id="5_52tid"]
 [ext_resource type="Texture2D" uid="uid://ddhciodt3hvod" path="res://assets/UI/Buttons/Button_Blue_3Slides.png" id="5_d5y6o"]
 [ext_resource type="Texture2D" uid="uid://bshdoqp7hxylf" path="res://assets/UI/Banners/Banner_Horizontal.png" id="6_d5y6o"]
+[ext_resource type="FontFile" uid="uid://bx2ihqwlpgohh" path="res://assets/Fonts/OpenDyslexic-Regular.otf" id="8_02usi"]
+[ext_resource type="FontFile" uid="uid://vgguwixfis5" path="res://assets/Fonts/OpenDyslexic-Italic.otf" id="9_06hgp"]
 [ext_resource type="PackedScene" uid="uid://bu7s4ux7omub1" path="res://scenes/Small_rocks_4.tscn" id="9_52tid"]
+[ext_resource type="FontFile" uid="uid://befte4t1le3r4" path="res://assets/Fonts/OpenDyslexic-Bold-Italic.woff" id="10_iw8d4"]
+[ext_resource type="FontFile" uid="uid://b4nefixj2hemt" path="res://assets/Fonts/OpenDyslexic-Bold.otf" id="11_c3m1x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52tid"]
 bg_color = Color(0, 0, 0, 0.705882)
@@ -182,26 +186,38 @@ grow_vertical = 2
 size_flags_vertical = 4
 texture = ExtResource("6_d5y6o")
 region_rect = Rect2(33.0074, 47.168, 126.098, 122.999)
-patch_margin_left = 30
-patch_margin_right = 30
+patch_margin_left = 32
+patch_margin_right = 32
 axis_stretch_horizontal = 1
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="RichTextLabel" parent="Control"]
 z_index = 11
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -139.0
-offset_top = 61.0
-offset_right = 790.0
-offset_bottom = 243.0
+offset_left = -255.0
+offset_top = -16.0
+offset_right = 1482.0
+offset_bottom = 667.0
 grow_horizontal = 2
 scale = Vector2(0.3, 0.3)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_1atjv")
-theme_override_font_sizes/font_size = 100
-text = "11222ddsd"
+theme_override_colors/default_color = Color(0, 0.2, 0.4, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.0646965, 0.0646965, 0.0646965, 0.760784)
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/normal_font = ExtResource("8_02usi")
+theme_override_fonts/italics_font = ExtResource("9_06hgp")
+theme_override_fonts/bold_italics_font = ExtResource("10_iw8d4")
+theme_override_fonts/bold_font = ExtResource("11_c3m1x")
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 125
+bbcode_enabled = true
+text = "[b]11222ddsd[/b]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -228,9 +244,9 @@ axis_stretch_horizontal = 1
 z_index = 11
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.409
+anchor_left = 0.41525
 anchor_top = 0.0305556
-anchor_right = 2.91994
+anchor_right = 2.92619
 anchor_bottom = 0.458333
 offset_left = -133.76
 offset_top = 141.0
@@ -242,7 +258,7 @@ size_flags_horizontal = 3
 theme_override_colors/selection_color = Color(0, 0, 0, 0)
 theme_override_colors/caret_color = Color(0, 0, 0, 0)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_1atjv")
+theme_override_fonts/font = ExtResource("11_c3m1x")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/focus = SubResource("StyleBoxFlat_4qge7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8twpt")

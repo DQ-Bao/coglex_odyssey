@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://4al2w6316224" path="res://scenes/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://0a5dwp6ys0qa" path="res://assets/UI/Banners/Carved_3Slides.png" id="2_u045a"]
+[ext_resource type="Texture2D" uid="uid://bshdoqp7hxylf" path="res://assets/UI/Banners/Banner_Horizontal.png" id="2_m0o5a"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://cyp0vwcv4ojo" path="res://assets/Fonts/OpenDyslexic-Regular.woff" id="3_m0o5a"]
 
@@ -42,10 +42,9 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i80d5"]
-content_margin_left = 74.0
-content_margin_right = 74.0
-texture = ExtResource("2_u045a")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0o5a"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
 default_font = ExtResource("3_m0o5a")
@@ -58,11 +57,22 @@ MarginContainer/constants/margin_bottom = 15
 MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
-PanelContainer/styles/panel = SubResource("StyleBoxTexture_i80d5")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_m0o5a")
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = -53.0
+offset_top = 408.0
+offset_right = 637.0
+offset_bottom = 600.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_m0o5a")
+patch_margin_left = 121
+patch_margin_right = 119
+axis_stretch_horizontal = 1
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
@@ -80,7 +90,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -219.0
+offset_top = -203.0
+offset_bottom = -65.0
 grow_horizontal = 2
 grow_vertical = 0
 

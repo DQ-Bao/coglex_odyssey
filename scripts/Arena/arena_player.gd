@@ -1,7 +1,7 @@
 extends Node2D
 @onready var sprite = $AnimatedSprite2D
-var hp = 4
-var max_hp = 4
+var hp = 20
+var max_hp = 20
 var use_attack_1 = true
 
 func _ready():

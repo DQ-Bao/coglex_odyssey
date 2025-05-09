@@ -79,20 +79,31 @@ position = Vector2(536, 384)
 [node name="player" parent="." instance=ExtResource("5_tbgi4")]
 position = Vector2(912, 344)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="player"]
-offset_left = -416.0
-offset_top = -328.0
-offset_right = 392.0
-offset_bottom = -160.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+z_index = 10
+layout_mode = 0
+offset_left = 496.0
+offset_top = 16.0
+offset_right = 1304.0
+offset_bottom = 184.0
 texture = ExtResource("5_85g3d")
 region_rect = Rect2(30, 0, 129, 192)
+patch_margin_left = 34
+patch_margin_right = 34
+axis_stretch_horizontal = 1
 
-[node name="Label" type="Label" parent="player/NinePatchRect"]
+[node name="Label" type="Label" parent="Control/NinePatchRect"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 8.0
+offset_top = 3.0
 offset_right = 800.0
-offset_bottom = 163.0
+offset_bottom = 158.0
 theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
 theme_override_fonts/font = ExtResource("3_jyhfs")
 theme_override_font_sizes/font_size = 50
@@ -100,12 +111,13 @@ text = "Coglex Odyssey"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="player"]
+[node name="Button" type="Button" parent="Control"]
 z_index = 100
-offset_left = -592.0
-offset_top = 96.0
-offset_right = -336.0
-offset_bottom = 200.0
+layout_mode = 0
+offset_left = 320.0
+offset_top = 440.0
+offset_right = 576.0
+offset_bottom = 544.0
 theme_override_colors/font_hover_color = Color(0.180392, 0.113725, 0.0470588, 1)
 theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
 theme_override_colors/font_focus_color = Color(0.180392, 0.113725, 0.0470588, 1)
@@ -118,12 +130,13 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ya4ey")
 theme_override_styles/normal = SubResource("StyleBoxTexture_o6xl0")
 text = "Start"
 
-[node name="Button2" type="Button" parent="player"]
+[node name="Button2" type="Button" parent="Control"]
 z_index = 100
-offset_left = -592.0
-offset_top = 232.0
-offset_right = -336.0
-offset_bottom = 336.0
+layout_mode = 0
+offset_left = 320.0
+offset_top = 576.0
+offset_right = 576.0
+offset_bottom = 680.0
 theme_override_colors/font_hover_color = Color(0.180392, 0.113725, 0.0470588, 1)
 theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
 theme_override_colors/font_focus_color = Color(0.180392, 0.113725, 0.0470588, 1)
@@ -136,5 +149,5 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_85g3d")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tipki")
 text = "Exit"
 
-[connection signal="pressed" from="player/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="player/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]

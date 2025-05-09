@@ -7,12 +7,24 @@ extends Node2D
 @onready var player_health_bar = $Control/PlayerHealthBar
 @onready var enemy_health_bar = $Control/EnemyHealthBar
 @onready var enemy_cooldown = $Control/EnemyCooldownCircle
-var words = ["sword", "magic", "dragon", "strike", "heal", "shield"]
+var words = [
+	"the", "that", "though", "through", "thought", "because", "said", "says",
+	"was", "were", "what", "who", "whom", "which", "when", "where", "while",
+	"their", "there", "they", "them", "then", "than", "some", "come", "one",
+	"once", "only", "could", "would", "should", "quiet", "quite", "know",
+	"knew", "knife", "gnaw", "write", "wrong", "read", "read", "lead", "lead",
+	"tough", "rough", "enough", "cough", "people", "friend", "school",
+	"sugar", "sure", "busy", "beautiful", "laugh", "throughout", "early"
+]
+
 var current_word = ""
 var enemy_max_cooldown = 3.0
 var enemy_current_cooldown = 0.0
 var can_type = true  # Flag to control input
 var is_waiting = true;
+var hard_components = ["th", "ou", "ie", "ei", "ea", "ph", "gh", "ch", "ck", "wh", "qu", "b", "d", "p", "q"]
+var highlight_colors = ["#FF1493", "#00CED1", "#FF8C00", "#8A2BE2", "#32CD32", "#FF4500", "#1E90FF", "#FFD700"]
+
 func _ready():
 	# Start with countdown sequence
 	start_countdown()
@@ -35,11 +47,11 @@ func start_countdown():
 	can_type = false
 	
 	# Countdown sequence
-	word_label.text = "3"
+	word_label.text = "[b]3[/b]"
 	await get_tree().create_timer(1.0).timeout
-	word_label.text = "2"
+	word_label.text = "[b]2[/b]"
 	await get_tree().create_timer(1.0).timeout
-	word_label.text = "1"
+	word_label.text = "[b]1[/b]"
 	await get_tree().create_timer(1.0).timeout
 	
 	is_waiting = false
@@ -50,7 +62,7 @@ func start_countdown():
 
 func spawn_word():
 	current_word = words[randi() % words.size()]
-	word_label.text = current_word
+	word_label.bbcode_text = colorize_word(current_word)
 	word_input.text = ""
 
 func _process(delta):
@@ -66,9 +78,9 @@ func _process(delta):
 			# Wrong word penalty: player is stunned for 1s
 			can_type = false
 			word_input.text = ""
-			word_label.text = "INCORRECT"
+			word_label.bbcode_text = "[b][color=red]INCORRECT[/color][/b]"
 			await get_tree().create_timer(1.0).timeout
-			word_label.text = current_word
+			word_label.bbcode_text = colorize_word(current_word)
 			can_type = true
 			word_input.grab_focus()
 	
@@ -76,6 +88,24 @@ func _process(delta):
 	if !is_waiting && enemy_current_cooldown < enemy_max_cooldown:
 		enemy_current_cooldown += delta
 		enemy_cooldown.value = enemy_current_cooldown
+
+func colorize_word(word: String) -> String:
+	var bbcode = ""
+	var i = 0
+	while i < word.length():
+		var matched = false
+		for comp in hard_components:
+			if word.substr(i, comp.length()) == comp:
+				var color = highlight_colors[randi() % highlight_colors.size()]
+				bbcode += "[b][color=" + color + "]" + comp + "[/color][/b]"
+				i += comp.length()
+				matched = true
+				break
+		if !matched:
+			bbcode += "[b]" + word[i] + "[/b]"
+			i += 1
+	return bbcode
+
 
 func _on_enemy_attack(damage):
 	player.take_damage(damage)
