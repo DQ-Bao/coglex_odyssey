@@ -9,7 +9,8 @@ var face_left = false
 @onready var dialogue_finder = $Direction/DialogueFinder
 
 func _physics_process(delta: float) -> void:
-	player_movement(delta)
+	if not is_attacking:
+		player_movement(delta)
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
@@ -17,6 +18,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		if dialogues.size() > 0:
 			dialogues[0].start()
 			return
+	if Input.is_action_just_pressed("attack") and not is_attacking:
+		await attack()
 		
 func player_movement(_delta):
 	var input_vec = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
