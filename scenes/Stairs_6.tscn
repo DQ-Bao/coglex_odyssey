@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnYhrjzVGRj"]
+[gd_scene load_steps=2 format=3 uid="uid://cway6625nlcnf"]
 
-[ext_resource type="TileSet" id="tileset_id" path="tileset.tres"]
+[ext_resource type="TileSet" uid="uid://bx2qf0tt0g2ug" path="res://scenes/tileset.tres" id="tileset_id"]
 
 [node name="Stairs_6" type="TileMapLayer"]
-collision_enabled = false
-tile_set = ExtResource("tileset_id")
 tile_map_data = PackedByteArray(0, 0, 9, 0, 8, 0, 0, 0, 3, 0, 18, 0, 0, 0, 10, 0, 8, 0, 0, 0, 4, 0, 18, 0, 0, 0, 11, 0, 8, 0, 0, 0, 5, 0, 18, 0, 0, 0)
+tile_set = ExtResource("tileset_id")
+collision_enabled = false
