@@ -1,0 +1,147 @@
+[gd_scene load_steps=19 format=4 uid="uid://cijhlb8wroxu6"]
+
+[ext_resource type="Script" uid="uid://bmen0wcy3allw" path="res://scripts/dead.gd" id="1_pheag"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sode2"]
+radius = 25.2982
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_sode2"]
+_data = PackedByteArray("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")
+size_override = Vector2(512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pheag"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4orh1"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnkcu"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s5mr"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70h2h"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn0c2"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k6an"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7112"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2800"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk8rp"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnlw2"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kar5w"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lilf"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4rch"]
+atlas = SubResource("PortableCompressedTexture2D_sode2")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xr3n6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pheag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4orh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnkcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s5mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70h2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn0c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k6an")
+}],
+"loop": true,
+"name": &"Buried",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7112")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2800")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk8rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnlw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kar5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lilf")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_f4rch")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 10.0
+}]
+
+[node name="Dead" type="StaticBody2D"]
+script = ExtResource("1_pheag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sode2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xr3n6")
+animation = &"Dead"
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "res://assets/Factions/Knights/Troops/Dead/Dead.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "d86185aa9fbc7f88139ceb51ab83d814"

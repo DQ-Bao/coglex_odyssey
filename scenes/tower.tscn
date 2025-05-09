@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv87078nkx8hu"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_7j8ug"]
+
+[node name="Tower" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_7j8ug")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"should_round_fps": true,
+"slice": "",
+"source": "res://assets/Factions/Knights/Buildings/Tower/Tower_Blue.png.import"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "ef378b89ecd2784312ccfeea497447fa"
