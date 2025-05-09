@@ -1,7 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://bemyq51p6sbk1"]
+[gd_scene load_steps=3 format=3 uid="uid://bemyq51p6sbk1"]
 
 [ext_resource type="Script" uid="uid://erq0jp7r6cge" path="res://scripts/dialogue_trigger.gd" id="1_o7blk"]
+[ext_resource type="Texture2D" uid="uid://bt1spc6pyl8vx" path="res://assets/UI/Buttons/Button_Blue.png" id="2_wktwx"]
 
 [node name="DialogueTrigger" type="Area2D"]
 collision_layer = 17
 script = ExtResource("1_o7blk")
+
+[node name="Prompt" type="NinePatchRect" parent="."]
+offset_left = -48.0
+offset_top = -88.0
+offset_right = -8.0
+offset_bottom = -48.0
+texture = ExtResource("2_wktwx")
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Prompt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -16.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "F"
+horizontal_alignment = 1
