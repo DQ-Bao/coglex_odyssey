@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Coglex Odyssey"
-run/main_scene="uid://bppaf6j47riuu"
+run/main_scene="uid://mqr00tbuj0u7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://scenes/balloon.tscn"
 
 [display]
 
@@ -80,6 +84,10 @@ attack={
 [internationalization]
 
 locale/translations_pot_files=PackedStringArray("res://dialogues/example.dialogue")
+
+[layer_names]
+
+2d_physics/layer_5="DialogueTrigger"
 
 [rendering]
 
