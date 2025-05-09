@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://ds0uspl4coqt5"]
+[gd_scene load_steps=40 format=4 uid="uid://ds0uspl4coqt5"]
 
 [ext_resource type="Script" uid="uid://yy5vl7ir55cs" path="res://scripts/goblin.gd" id="1_tjgje"]
 
@@ -280,7 +280,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="goblin_torch" type="StaticBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjgje"]
+radius = 43.0813
+
+[node name="goblin" type="StaticBody2D"]
 script = ExtResource("1_tjgje")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -305,3 +308,8 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "661aaf9a58c93211ab2231505a45e182"
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_tjgje")

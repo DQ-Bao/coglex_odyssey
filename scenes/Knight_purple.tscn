@@ -1,4 +1,7 @@
-[gd_scene load_steps=46 format=4 uid="uid://dv7lved4scrmf"]
+[gd_scene load_steps=49 format=4 uid="uid://dv7lved4scrmf"]
+
+[ext_resource type="PackedScene" uid="uid://bemyq51p6sbk1" path="res://scenes/dialogue_trigger.tscn" id="1_1ui56"]
+[ext_resource type="Resource" uid="uid://bbh7l1jdloi2y" path="res://dialogues/knights.dialogue" id="2_5yosy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uipbi"]
 radius = 24.0
@@ -493,6 +496,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5yosy"]
+radius = 73.7564
+
 [node name="KnightPurple" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -518,3 +524,11 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://assets/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "a59c4cc5e95f2e407b25cba65c8fe883"
+
+[node name="DialogueTrigger" parent="." instance=ExtResource("1_1ui56")]
+position = Vector2(80, 24)
+dialogue_resource = ExtResource("2_5yosy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueTrigger"]
+position = Vector2(-80, -24)
+shape = SubResource("CircleShape2D_5yosy")

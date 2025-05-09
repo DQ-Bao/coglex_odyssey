@@ -337,8 +337,7 @@ script = ExtResource("1_nh2m4")
 texture_filter = 1
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_fdkk8")
-animation = &"Idle"
-frame_progress = 0.562073
+animation = &"Build"
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
