@@ -183,7 +183,7 @@ position = Vector2(1500, 180)
 position = Vector2(1196, 248)
 
 [node name="player" parent="." instance=ExtResource("15_djx7b")]
-position = Vector2(1472, 1144)
+position = Vector2(832, 441)
 
 [node name="Miscs_0" parent="." instance=ExtResource("0_id")]
 visibility_layer = 5
@@ -238,12 +238,12 @@ position = Vector2(1328, 1208)
 goblin_animation = "Attack_Right"
 
 [node name="goblin2" parent="Goblins" instance=ExtResource("17_u4fdk")]
-position = Vector2(1560, 1120)
+position = Vector2(1553, 1103)
 scale = Vector2(-1, 1)
 goblin_animation = "Original"
 
 [node name="GoblinBomb" parent="Goblins" instance=ExtResource("19_djua3")]
-position = Vector2(1624, 1176)
+position = Vector2(1603, 1171)
 scale = Vector2(-1, 1)
 
 [node name="Sheeps" type="Node2D" parent="."]
