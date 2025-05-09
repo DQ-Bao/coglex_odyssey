@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Coglex Odyssey"
-run/main_scene="uid://mqr00tbuj0u7"
+run/main_scene="uid://bppaf6j47riuu"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
