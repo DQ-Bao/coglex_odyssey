@@ -1,0 +1,112 @@
+[gd_scene load_steps=17 format=3 uid="uid://8qr568apjee3"]
+
+[ext_resource type="Script" uid="uid://4yln3rdlvd4f" path="res://scripts/map_escape.gd" id="1_biqq1"]
+[ext_resource type="FontFile" uid="uid://cyp0vwcv4ojo" path="res://assets/Fonts/OpenDyslexic-Regular.woff" id="1_r44po"]
+[ext_resource type="Texture2D" uid="uid://v5ga4varlne4" path="res://assets/UI/Buttons/Button_Disable_3Slides.png" id="2_8dhb6"]
+[ext_resource type="Texture2D" uid="uid://cxnc80jbrjv02" path="res://assets/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="2_a00jc"]
+[ext_resource type="Texture2D" uid="uid://dt83ebpdwapra" path="res://assets/UI/Buttons/Button_Hover_3Slides.png" id="2_gaxuh"]
+[ext_resource type="Texture2D" uid="uid://ddhciodt3hvod" path="res://assets/UI/Buttons/Button_Blue_3Slides.png" id="2_x64s3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gaxuh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_biqq1"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_8dhb6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dhb6"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_gaxuh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gaxuh"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_a00jc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a00jc"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_x64s3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dhb6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p8b2w"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_8dhb6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7cojo"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_gaxuh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c45ww"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_a00jc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55d6f"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_x64s3")
+
+[node name="MapEscape" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_biqq1")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="ContinueBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 104)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("1_r44po")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gaxuh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_biqq1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8dhb6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gaxuh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_a00jc")
+text = "Continue"
+
+[node name="MenuBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(320, 104)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("1_r44po")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8dhb6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_p8b2w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7cojo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c45ww")
+theme_override_styles/normal = SubResource("StyleBoxTexture_55d6f")
+text = "Back to Title"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]

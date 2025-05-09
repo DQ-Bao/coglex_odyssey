@@ -1,0 +1,10 @@
+~ Start
+Villager: Hey there, traveler! We're having a fun quiz game here in the village.
+Villager: Would you like to join us?
+- Sure, sounds fun!
+	Villager: Great! Let's begin.
+	do MapGlobal.start_quiz_game.emit()
+	=> END
+- No thanks
+	Villager: No worries! Come back if you change your mind.
+	=> END

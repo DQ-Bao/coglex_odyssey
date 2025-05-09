@@ -21,4 +21,4 @@ func take_damage(amount):
 	hp -= amount
 	hp = max(0, hp)  # Empêche hp de devenir négatif
 	if hp <= 0:
-		print("Player defeated")
+		get_tree().change_scene_to_file("res://scenes/Map.tscn")

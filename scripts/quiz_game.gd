@@ -8,6 +8,7 @@ extends Control
 	$VBoxContainer/ButtonD
 ]
 @onready var feedback_label = $FeedbackLabel
+@onready var pause_menu = $CombatEscape
 
 # Quiz data: [question, [options], correct_index]
 var questions = [
@@ -28,11 +29,15 @@ var highlight_colors = [
 	"#1E90FF",  # DodgerBlue (Strong blue)
 	"#F08080"   # LightCoral (Pale red)
 ]
+var is_paused = false
 
 
 func _ready():
 	question_label.bbcode_enabled = true
 	show_question()
+	pause_menu.visible = false
+	pause_menu.connect("combat_continued", _on_combat_continued)
+	pause_menu.connect("combat_retreated", _on_combat_retreated)
 
 func show_question():
 	var q = questions[current_question]
@@ -77,6 +82,8 @@ func next_question():
 		for btn in buttons:
 			btn.visible = false
 		feedback_label.text = ""
+		await get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file("res://scenes/Map.tscn")
 	else:
 		show_question()
 
@@ -111,3 +118,17 @@ func colorize_word(word: String) -> String:
 
 func char(code: int) -> String:
 	return "%c" % code
+
+func _on_combat_continued():
+	is_paused = false
+	get_tree().paused = false
+	pause_menu.visible = false
+
+func _on_combat_retreated():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/Map.tscn")
+	
+func toggle_pause():
+	is_paused = !is_paused
+	get_tree().paused = is_paused
+	pause_menu.visible = is_paused

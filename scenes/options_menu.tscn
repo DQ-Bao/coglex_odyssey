@@ -1,0 +1,159 @@
+[gd_scene load_steps=18 format=3 uid="uid://dank8lhteuklj"]
+
+[ext_resource type="Texture2D" uid="uid://bshdoqp7hxylf" path="res://assets/UI/Banners/Banner_Horizontal.png" id="1_3xsyx"]
+[ext_resource type="Script" uid="uid://bleeo45tuju8u" path="res://scripts/options_menu.gd" id="1_k61yy"]
+[ext_resource type="FontFile" uid="uid://cyp0vwcv4ojo" path="res://assets/Fonts/OpenDyslexic-Regular.woff" id="1_liyum"]
+[ext_resource type="Texture2D" uid="uid://0a5dwp6ys0qa" path="res://assets/UI/Banners/Carved_3Slides.png" id="2_dhn0l"]
+[ext_resource type="Texture2D" uid="uid://cxnc80jbrjv02" path="res://assets/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="2_hm4m4"]
+[ext_resource type="Texture2D" uid="uid://ddhciodt3hvod" path="res://assets/UI/Buttons/Button_Blue_3Slides.png" id="2_ijpji"]
+[ext_resource type="Texture2D" uid="uid://dt83ebpdwapra" path="res://assets/UI/Buttons/Button_Hover_3Slides.png" id="2_lfjc7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k61yy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7txom"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xsyx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7txom"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_lfjc7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhn0l"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_hm4m4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k61yy"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_ijpji")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lfjc7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xsyx"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_lfjc7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfjc7"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_hm4m4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hm4m4"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_ijpji")
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k61yy")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="AgeOption" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Property" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/AgeOption"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+texture = ExtResource("1_3xsyx")
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/AgeOption/Property"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("1_liyum")
+theme_override_font_sizes/font_size = 25
+text = "Age"
+
+[node name="Value" type="NinePatchRect" parent="PanelContainer/MarginContainer/VBoxContainer/AgeOption"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_dhn0l")
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/AgeOption/Value"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/caret_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_placeholder_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("1_liyum")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k61yy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7txom")
+placeholder_text = "Not Set"
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="SaveBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(256, 104)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("1_liyum")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3xsyx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7txom")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dhn0l")
+theme_override_styles/normal = SubResource("StyleBoxTexture_k61yy")
+text = "Save"
+
+[node name="CancelBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(256, 104)
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("1_liyum")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lfjc7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3xsyx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lfjc7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hm4m4")
+text = "Cancel"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SaveBtn" to="." method="_on_save_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CancelBtn" to="." method="_on_cancel_btn_pressed"]

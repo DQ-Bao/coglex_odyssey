@@ -1,0 +1,112 @@
+[gd_scene load_steps=17 format=3 uid="uid://csgh85pcfkn56"]
+
+[ext_resource type="FontFile" uid="uid://cyp0vwcv4ojo" path="res://assets/Fonts/OpenDyslexic-Regular.woff" id="1_ine21"]
+[ext_resource type="Script" uid="uid://cjy6l7umbhbxa" path="res://scripts/combat_escape.gd" id="1_vryd3"]
+[ext_resource type="Texture2D" uid="uid://v5ga4varlne4" path="res://assets/UI/Buttons/Button_Disable_3Slides.png" id="2_vryd3"]
+[ext_resource type="Texture2D" uid="uid://dt83ebpdwapra" path="res://assets/UI/Buttons/Button_Hover_3Slides.png" id="3_offn0"]
+[ext_resource type="Texture2D" uid="uid://cxnc80jbrjv02" path="res://assets/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="4_5yxs8"]
+[ext_resource type="Texture2D" uid="uid://ddhciodt3hvod" path="res://assets/UI/Buttons/Button_Blue_3Slides.png" id="5_onjqi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t41r7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcqdv"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_vryd3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kb0fb"]
+content_margin_bottom = 23.0
+texture = ExtResource("3_offn0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bu26"]
+content_margin_bottom = 23.0
+texture = ExtResource("4_5yxs8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qpmu4"]
+content_margin_bottom = 23.0
+texture = ExtResource("5_onjqi")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kt3wr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pk0oa"]
+content_margin_bottom = 23.0
+texture = ExtResource("2_vryd3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4j1p"]
+content_margin_bottom = 23.0
+texture = ExtResource("3_offn0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s2c1b"]
+content_margin_bottom = 23.0
+texture = ExtResource("4_5yxs8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_no4s4"]
+content_margin_bottom = 23.0
+texture = ExtResource("5_onjqi")
+
+[node name="CombatEscape" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vryd3")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="ContinueBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 104)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("1_ine21")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t41r7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rcqdv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kb0fb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1bu26")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qpmu4")
+text = "Continue"
+
+[node name="RetreatBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 104)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_hover_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("1_ine21")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kt3wr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_pk0oa")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j4j1p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_s2c1b")
+theme_override_styles/normal = SubResource("StyleBoxTexture_no4s4")
+text = "Retreat"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/RetreatBtn" to="." method="_on_retreat_btn_pressed"]

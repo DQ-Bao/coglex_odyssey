@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bppaf6j47riuu"]
+[gd_scene load_steps=33 format=4 uid="uid://bppaf6j47riuu"]
 
 [ext_resource type="Script" uid="uid://cyjj8tk4nkuun" path="res://scripts/main.gd" id="1_choun"]
 [ext_resource type="TileSet" uid="uid://bx2qf0tt0g2ug" path="res://scenes/tileset.tres" id="1_sugp2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dt83ebpdwapra" path="res://assets/UI/Buttons/Button_Hover_3Slides.png" id="6_tipki"]
 [ext_resource type="Texture2D" uid="uid://cxnc80jbrjv02" path="res://assets/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="7_85g3d"]
 [ext_resource type="Texture2D" uid="uid://v5ga4varlne4" path="res://assets/UI/Buttons/Button_Disable_3Slides.png" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://dank8lhteuklj" path="res://scenes/options_menu.tscn" id="12_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cbb7hnej2yqx2" path="res://scenes/tree.tscn" id="17_og1vs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85g3d"]
@@ -37,6 +38,24 @@ content_margin_bottom = 23.0
 texture = ExtResource("7_85g3d")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tipki"]
+content_margin_bottom = 23.0
+texture = ExtResource("6_tefeu")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eb6dy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yc10j"]
+content_margin_bottom = 23.0
+texture = ExtResource("11_ya4ey")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqmmt"]
+content_margin_bottom = 23.0
+texture = ExtResource("6_tipki")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ld40"]
+content_margin_bottom = 23.0
+texture = ExtResource("7_85g3d")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3eg"]
 content_margin_bottom = 23.0
 texture = ExtResource("6_tefeu")
 
@@ -138,12 +157,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="player/Control"]
-z_index = 100
+z_index = 10
 layout_mode = 0
 offset_left = 320.0
-offset_top = 440.0
+offset_top = 352.0
 offset_right = 576.0
-offset_bottom = 544.0
+offset_bottom = 456.0
 theme_override_colors/font_hover_color = Color(0.180392, 0.113725, 0.0470588, 1)
 theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
 theme_override_colors/font_focus_color = Color(0.180392, 0.113725, 0.0470588, 1)
@@ -157,7 +176,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_o6xl0")
 text = "Start"
 
 [node name="Button2" type="Button" parent="player/Control"]
-z_index = 100
+z_index = 10
 layout_mode = 0
 offset_left = 320.0
 offset_top = 576.0
@@ -174,6 +193,34 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_eb6dy")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_85g3d")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tipki")
 text = "Exit"
+
+[node name="Button3" type="Button" parent="player/Control"]
+z_index = 10
+layout_mode = 0
+offset_left = 320.0
+offset_top = 464.0
+offset_right = 576.0
+offset_bottom = 568.0
+theme_override_colors/font_hover_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_focus_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_colors/font_pressed_color = Color(0.180392, 0.113725, 0.0470588, 1)
+theme_override_fonts/font = ExtResource("5_tefeu")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eb6dy")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_yc10j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gqmmt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ld40")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dp3eg")
+text = "Options"
+
+[node name="OptionsMenu" parent="player/Control" instance=ExtResource("12_eb6dy")]
+z_index = 10
+layout_mode = 1
+offset_left = 272.0
+offset_top = -16.0
+offset_right = 1512.0
+offset_bottom = 664.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -232,7 +279,9 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_jkv2x")
 theme_override_styles/normal = SubResource("StyleBoxTexture_a8y0u")
 text = "Cancel"
 
+[connection signal="player_data_loaded" from="." to="player/Control/OptionsMenu" method="_on_player_data_loaded"]
 [connection signal="pressed" from="player/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="player/Control/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="player/Control/Button3" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_age_confirm_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_age_cancel_button_pressed"]

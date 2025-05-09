@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b56o61teckhvp"
+path="res://.godot/imported/villager.dialogue-9a638d94c2a99499971b085cea666279.tres"
+
+[deps]
+
+source_file="res://villager.dialogue"
+dest_files=["res://.godot/imported/villager.dialogue-9a638d94c2a99499971b085cea666279.tres"]
+
+[params]
+
+defaults=true
