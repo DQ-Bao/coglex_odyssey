@@ -5,14 +5,18 @@ var is_attacking := false
 var face_left = false
 
 @onready var sprite := $AnimatedSprite2D
-@onready var attack_area := $AttackArea
+@onready var attack_area := $AttackPivot/AttackArea
 @onready var dialogue_finder = $Direction/DialogueFinder
+
+func _ready() -> void:
+	attack_area.monitoring = false
+	attack_area.monitorable = false
 
 func _physics_process(delta: float) -> void:
 	if not is_attacking:
 		player_movement(delta)
 	
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		var dialogues = dialogue_finder.get_overlapping_areas()
 		if dialogues.size() > 0:
@@ -30,6 +34,10 @@ func player_movement(_delta):
 		play_animation("Run")
 	else:
 		play_animation("Idle")
+	if face_left:
+		$AttackPivot.scale.x = -1
+	else:
+		$AttackPivot.scale.x = 1
 	move_and_slide()
 
 
@@ -46,7 +54,9 @@ func attack():
 	velocity = Vector2.ZERO
 	play_animation("Attack_1")
 	attack_area.monitoring = true
+	attack_area.monitorable = true
 
 	await sprite.animation_finished
 	is_attacking = false
 	attack_area.monitoring = false
+	attack_area.monitorable = false

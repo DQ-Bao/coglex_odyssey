@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://ds0uspl4coqt5"]
+[gd_scene load_steps=40 format=4 uid="uid://dj73wpboot78l"]
 
 [ext_resource type="Script" uid="uid://yy5vl7ir55cs" path="res://scripts/goblin.gd" id="1_tjgje"]
 
@@ -280,8 +280,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tjgje"]
-radius = 43.0813
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjgje"]
+size = Vector2(48, 45)
 
 [node name="goblin" type="StaticBody2D"]
 script = ExtResource("1_tjgje")
@@ -292,7 +292,8 @@ shape = SubResource("CircleShape2D_4yait")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_2vxh5")
-animation = &"Original"
+animation = &"Idle"
+frame_progress = 0.760951
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -312,4 +313,5 @@ metadata/_aseprite_wizard_source_file_hash_ = "661aaf9a58c93211ab2231505a45e182"
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("CircleShape2D_tjgje")
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_tjgje")

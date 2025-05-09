@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+PlayerData="*res://scripts/player_data.gd"
 
 [dialogue_manager]
 
