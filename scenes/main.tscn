@@ -103,13 +103,15 @@ position = Vector2(536, 384)
 [node name="player" parent="." instance=ExtResource("5_tbgi4")]
 position = Vector2(912, 344)
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="player"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -912.0
+offset_top = -344.0
+offset_right = -872.0
+offset_bottom = -304.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+[node name="NinePatchRect" type="NinePatchRect" parent="player/Control"]
 z_index = 10
 layout_mode = 0
 offset_left = 496.0
@@ -122,7 +124,7 @@ patch_margin_left = 34
 patch_margin_right = 34
 axis_stretch_horizontal = 1
 
-[node name="Label" type="Label" parent="Control/NinePatchRect"]
+[node name="Label" type="Label" parent="player/Control/NinePatchRect"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 3.0
@@ -135,7 +137,7 @@ text = "Coglex Odyssey"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Button" type="Button" parent="player/Control"]
 z_index = 100
 layout_mode = 0
 offset_left = 320.0
@@ -154,7 +156,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ya4ey")
 theme_override_styles/normal = SubResource("StyleBoxTexture_o6xl0")
 text = "Start"
 
-[node name="Button2" type="Button" parent="Control"]
+[node name="Button2" type="Button" parent="player/Control"]
 z_index = 100
 layout_mode = 0
 offset_left = 320.0
@@ -230,7 +232,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_jkv2x")
 theme_override_styles/normal = SubResource("StyleBoxTexture_a8y0u")
 text = "Cancel"
 
-[connection signal="pressed" from="player/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="player/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="player/Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="player/Control/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_age_confirm_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_age_cancel_button_pressed"]

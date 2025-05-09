@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var start_btn = $player/Button
-@onready var quit_btn = $player/Button2
+@onready var start_btn = $player/Control/Button
+@onready var quit_btn = $player/Control/Button2
 @onready var age_popup = $CanvasLayer
 @onready var age_input = $CanvasLayer/LineEdit
 @onready var age_confirm_btn = $CanvasLayer/Button
