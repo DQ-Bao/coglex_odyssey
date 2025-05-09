@@ -533,9 +533,11 @@ shape = SubResource("CapsuleShape2D_3vyb7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="AttackArea" type="Area2D" parent="."]
+[node name="AttackPivot" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+[node name="AttackArea" type="Area2D" parent="AttackPivot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPivot/AttackArea"]
 position = Vector2(44.25, -45)
 shape = SubResource("RectangleShape2D_3vyb7")
 

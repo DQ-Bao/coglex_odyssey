@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://p7h38ieyf546" path="res://scenes/npc.tscn" id="15_sxh8t"]
 [ext_resource type="PackedScene" uid="uid://cbb7hnej2yqx2" path="res://scenes/tree.tscn" id="16_sxh8t"]
 [ext_resource type="PackedScene" uid="uid://cedwq3uv77a5o" path="res://scenes/archer.tscn" id="17_5tvfu"]
-[ext_resource type="PackedScene" uid="uid://ds0uspl4coqt5" path="res://scenes/goblin.tscn" id="17_u4fdk"]
+[ext_resource type="PackedScene" uid="uid://dj73wpboot78l" path="res://scenes/goblin.tscn" id="17_u4fdk"]
 [ext_resource type="PackedScene" uid="uid://br4ketgbd8uej" path="res://sheep.tscn" id="18_08blb"]
 [ext_resource type="PackedScene" uid="uid://c1ffej555fjtn" path="res://scenes/Knight_red.tscn" id="18_hpvou"]
 [ext_resource type="PackedScene" uid="uid://cmep38knyahmg" path="res://scenes/goblin_bomb.tscn" id="19_djua3"]
@@ -183,7 +183,7 @@ position = Vector2(1500, 180)
 position = Vector2(1196, 248)
 
 [node name="player" parent="." instance=ExtResource("15_djx7b")]
-position = Vector2(1472, 1144)
+position = Vector2(832, 441)
 
 [node name="Miscs_0" parent="." instance=ExtResource("0_id")]
 visibility_layer = 5
@@ -238,12 +238,12 @@ position = Vector2(1328, 1208)
 goblin_animation = "Attack_Right"
 
 [node name="goblin2" parent="Goblins" instance=ExtResource("17_u4fdk")]
-position = Vector2(1560, 1120)
+position = Vector2(1553, 1103)
 scale = Vector2(-1, 1)
 goblin_animation = "Original"
 
 [node name="GoblinBomb" parent="Goblins" instance=ExtResource("19_djua3")]
-position = Vector2(1624, 1176)
+position = Vector2(1603, 1171)
 scale = Vector2(-1, 1)
 
 [node name="Sheeps" type="Node2D" parent="."]
