@@ -7,6 +7,7 @@ extends Node2D
 @onready var player_health_bar = $Control/PlayerHealthBar
 @onready var enemy_health_bar = $Control/EnemyHealthBar
 @onready var enemy_cooldown = $Control/EnemyCooldownCircle
+@onready var pause_menu = $Control/CombatEscape
 var words = [
 	"the", "that", "though", "through", "thought", "because", "said", "says",
 	"was", "were", "what", "who", "whom", "which", "when", "where", "while",
@@ -24,6 +25,7 @@ var can_type = true  # Flag to control input
 var is_waiting = true;
 var hard_components = ["th", "ou", "ie", "ei", "ea", "ph", "gh", "ch", "ck", "wh", "qu", "b", "d", "p", "q"]
 var highlight_colors = ["#FF1493", "#00CED1", "#FF8C00", "#8A2BE2", "#32CD32", "#FF4500", "#1E90FF", "#FFD700"]
+var is_paused = false
 
 func _ready():
 	# Start with countdown sequence
@@ -41,7 +43,11 @@ func _ready():
 	# Initialize circular cooldown
 	enemy_cooldown.max_value = enemy_max_cooldown
 	enemy_cooldown.value = enemy_max_cooldown
-
+	
+	pause_menu.visible = false
+	pause_menu.connect("combat_continued", _on_combat_continued)
+	pause_menu.connect("combat_retreated", _on_combat_retreated)
+	
 func start_countdown():
 	# Disable input during countdown
 	can_type = false
@@ -66,6 +72,10 @@ func spawn_word():
 	word_input.text = ""
 
 func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		toggle_pause()
+	if is_paused:
+		return
 	if Input.is_action_just_pressed("ui_accept") and can_type:
 		var typed = word_input.text.strip_edges()
 		if typed == current_word:
@@ -113,3 +123,30 @@ func _on_enemy_attack(damage):
 	# Reset cooldown after attack
 	enemy_current_cooldown = 0
 	enemy_cooldown.value = 0
+	
+func _on_combat_continued():
+	is_paused = false
+	get_tree().paused = false
+	pause_menu.visible = false
+	word_label.visible = true
+	word_label.bbcode_text = colorize_word(current_word)
+	if can_type:
+		word_input.grab_focus()
+
+func _on_combat_retreated():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/Map.tscn")
+	
+func toggle_pause():
+	is_paused = !is_paused
+	get_tree().paused = is_paused
+	
+	if is_paused:
+		pause_menu.visible = true
+		word_label.visible = false
+	else:
+		pause_menu.visible = false
+		word_label.visible = true
+		word_label.bbcode_text = colorize_word(current_word)
+		if can_type:
+			word_input.grab_focus()

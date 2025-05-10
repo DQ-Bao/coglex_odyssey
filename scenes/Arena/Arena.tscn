@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dt6gta8jx2eqv"]
+[gd_scene load_steps=21 format=3 uid="uid://dt6gta8jx2eqv"]
 
 [ext_resource type="PackedScene" uid="uid://dadwop41cfvaq" path="res://scenes/Arena/PlayerArena.tscn" id="1_qvfjg"]
 [ext_resource type="Script" uid="uid://cj2qlaendb310" path="res://scripts/Arena/arena.gd" id="1_yrroq"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bu7s4ux7omub1" path="res://scenes/Small_rocks_4.tscn" id="9_52tid"]
 [ext_resource type="FontFile" uid="uid://befte4t1le3r4" path="res://assets/Fonts/OpenDyslexic-Bold-Italic.woff" id="10_iw8d4"]
 [ext_resource type="FontFile" uid="uid://b4nefixj2hemt" path="res://assets/Fonts/OpenDyslexic-Bold.otf" id="11_c3m1x"]
+[ext_resource type="PackedScene" uid="uid://csgh85pcfkn56" path="res://scenes/CombatEscape.tscn" id="13_06hgp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52tid"]
 bg_color = Color(0, 0, 0, 0.705882)
@@ -265,6 +266,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8twpt")
 alignment = 1
 keep_editing_on_text_submit = true
 metadata/_edit_use_anchors_ = true
+
+[node name="CombatEscape" parent="Control" instance=ExtResource("13_06hgp")]
+process_mode = 2
+z_index = 30
+layout_mode = 1
 
 [node name="Small_rocks_4" parent="." instance=ExtResource("9_52tid")]
 position = Vector2(-398, -390)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bemyq51p6sbk1"]
+[gd_scene load_steps=5 format=3 uid="uid://bemyq51p6sbk1"]
 
 [ext_resource type="Script" uid="uid://erq0jp7r6cge" path="res://scripts/dialogue_trigger.gd" id="1_o7blk"]
 [ext_resource type="Texture2D" uid="uid://bt1spc6pyl8vx" path="res://assets/UI/Buttons/Button_Blue.png" id="2_wktwx"]
+[ext_resource type="Texture2D" uid="uid://c74g74luke6oo" path="res://assets/UI/Pointers/05.png" id="3_w6tmn"]
+[ext_resource type="Texture2D" uid="uid://bh1jpy5wphvoa" path="res://assets/UI/Pointers/06.png" id="4_unmpr"]
 
 [node name="DialogueTrigger" type="Area2D"]
 collision_layer = 17
@@ -21,13 +23,18 @@ patch_margin_right = 27
 patch_margin_bottom = 42
 axis_stretch_horizontal = 1
 
-[node name="Label" type="Label" parent="Prompt"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 26.6667
-offset_right = 26.6667
-grow_horizontal = 2
-grow_vertical = 2
-text = "___    ___"
+[node name="TextureRect" type="TextureRect" parent="Prompt"]
+layout_mode = 0
+offset_left = 16.6667
+offset_top = -11.6667
+offset_right = 80.6667
+offset_bottom = 52.3333
+texture = ExtResource("3_w6tmn")
+
+[node name="TextureRect2" type="TextureRect" parent="Prompt"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -11.6667
+offset_right = 99.0
+offset_bottom = 52.3333
+texture = ExtResource("4_unmpr")
