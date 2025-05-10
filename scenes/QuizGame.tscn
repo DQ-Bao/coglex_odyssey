@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://b4nefixj2hemt" path="res://assets/Fonts/OpenDyslexic-Bold.otf" id="3_ulv70"]
 [ext_resource type="Texture2D" uid="uid://bshdoqp7hxylf" path="res://assets/UI/Banners/Banner_Horizontal.png" id="4_polf2"]
 [ext_resource type="PackedScene" path="res://scenes/Grass_9.tscn" id="5_8ljgr"]
-[ext_resource type="PackedScene" uid="uid://csgh85pcfkn56" path="res://scenes/CombatEscape.tscn" id="5_mg4yu"]
+[ext_resource type="PackedScene" path="res://scenes/CombatEscape.tscn" id="5_mg4yu"]
 
 [node name="QuizGame" type="Control"]
 layout_mode = 3
